@@ -1,0 +1,17 @@
+{
+  "name": "data-collecting-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data-collecting-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gdax": "^0.8.0",
+    "mongodb": "^3.0.10",
+    "twitter-node-client": "0.0.6"
+  }
+}

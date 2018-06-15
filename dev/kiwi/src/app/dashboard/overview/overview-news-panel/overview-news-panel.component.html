@@ -1,0 +1,13 @@
+<div class="card mb-4 box-shadow overview-news-panel">
+	<div class="news-panel-icon-container">
+		<mat-icon>fingerprint</mat-icon>
+	</div>
+	<div id="overview-news-panel-container" class="card-body text-secondary overview-news-panel-container">
+		<div class="overview-news-panel-content">
+			<div class="news-item" *ngFor="let item of newsItems"><a href="{{item.href}}" target="_blank" title="{{item.title}}"><span>{{item.title}}</span></a></div>
+		</div>
+		<div class="overview-news-panel-content">
+			<div class="news-item" *ngFor="let item of newsItems"><a href="{{item.href}}" target="_blank" title="{{item.title}}"><span>{{item.title}}</span></a></div>
+		</div>
+	</div>
+</div>

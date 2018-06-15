@@ -1,0 +1,19 @@
+<main role="main container">
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<app-overview-chart-panel (latestPrice)="onLatestPrice($event)" (latestOrderBook)="onLatestOrderBook($event)"></app-overview-chart-panel>
+				</div>
+				<div class="col-md-4">
+					<app-overview-table-panel [latestPrice]="latestPrice" [latestOrderBook]="latestOrderBook"></app-overview-table-panel>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<app-overview-news-panel></app-overview-news-panel>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

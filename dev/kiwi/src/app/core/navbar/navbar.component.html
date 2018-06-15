@@ -1,0 +1,36 @@
+<header>
+	<div class="bg-dark collapse" id="navbarHeader" style="">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-md-7 py-4">
+					<h4 class="text-white">About</h4>
+					<p class="text-muted">Kiwi Analytics provides insights into BTC-USD rates. Statistics on both actual market data and forecast are offered.</p>
+				</div>
+				<div class="col-sm-4 offset-md-1 py-4">
+					<h4 class="text-white">Go to</h4>
+					<ul class="list-unstyled">
+						<li><a [routerLink]="['/dashboard']" href="#" class="text-white">Dashboard</a></li>
+						<li>
+							<ul *ngIf="currentUser?.username" class="list-unstyled inner-ul">
+								<li><a [routerLink]="['/dashboard/overview']" href="#" class="text-white">-&gt; Overview</a></li>								
+							</ul>
+						</li>
+						<li *ngIf="currentUser?.username"><a (click)="doSignout();false" href="#" class="text-white">Sign Out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-dark bg-dark box-shadow">
+		<div class="container d-flex justify-content-between">
+			<a [routerLink]="['/home']" href="#" class="navbar-brand d-flex align-items-center">
+				<mat-icon color="white">fingerprint</mat-icon>
+				<strong>Kiwi Analytics</strong>
+			</a>
+			<button id="collapseBtn" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader"
+				aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+		</div>
+	</div>
+</header>

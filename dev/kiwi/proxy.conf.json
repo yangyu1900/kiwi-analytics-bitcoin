@@ -1,0 +1,5 @@
+{
+    "/kiwi": {
+        "target": "http://localhost:8000"
+    }
+}

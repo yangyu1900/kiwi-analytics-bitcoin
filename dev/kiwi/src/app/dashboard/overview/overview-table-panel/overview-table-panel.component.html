@@ -1,0 +1,32 @@
+<div class="card mb-4 box-shadow" style="">
+	<mat-tab-group>
+		<mat-tab label="Forecast">
+			<div *ngIf="latestPrice" class="card-body text-secondary overview-table-panel-content">
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Start: </span><span class="field-value badge badge-secondary badge-pill">{{ (latestPrice._id - 60) * 1000 | date:'medium' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">End: </span><span class="field-value badge badge-secondary badge-pill">{{ latestPrice._id * 1000 | date:'medium' }}</span></p>
+				<hr>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Open: </span><span class="open-price">{{ latestPrice.open | number:'1.2-2' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Close: </span><span class="close-price">{{ latestPrice.close | number:'1.2-2' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">High: </span><span class="high-price ">{{ latestPrice.high | number:'1.2-2' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Low: </span><span class="low-price">{{ latestPrice.low | number:'1.2-2' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Volume: </span><span class="trade-volume">{{ latestPrice.volume | number:'1.5-5' }}</span></p>
+				<hr>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Forecast: </span><span class="field-value badge badge-secondary badge-pill">{{ latestPrice.forecast | number:'1.2-2' }}</span></p>
+				<p class="card-item d-flex justify-content-between align-items-center"><span class="field-name">MSE: </span><span class="field-value badge badge-secondary badge-pill">{{ latestPrice.mse | number:'1.5-8' }}</span></p>
+			</div>
+		</mat-tab>
+		<mat-tab label="Order Book">
+			<div *ngIf="latestOrderBook" class="card-body text-secondary overview-table-panel-content">
+				<small class="card-item d-flex justify-content-between align-items-center"><span class="field-name">Market size</span><span class="field-name">Price(USD)</span></small>
+				<hr>
+				<small>Asks</small>
+				<hr>
+				<p *ngFor="let ask of latestOrderBook.asks.slice(0, 25).reverse()" class="card-item d-flex justify-content-between align-items-center"><span class="ask-size">{{ask[1] | number:'1.5-8'}}</span><span class="field-value ask-price">{{ask[0] | number:'1.2-2'}}</span></p>
+				<hr>
+				<small>Bids</small>
+				<hr>
+				<p *ngFor="let bid of latestOrderBook.bids.slice(0, 25)" class="card-item d-flex justify-content-between align-items-center"><span class="bid-size">{{bid[1] | number:'1.5-8'}}</span><span class="field-value bid-price">{{bid[0] | number:'1.2-2'}}</span></p>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+</div>

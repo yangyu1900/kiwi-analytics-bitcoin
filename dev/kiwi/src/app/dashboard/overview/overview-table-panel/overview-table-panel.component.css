@@ -1,0 +1,16 @@
+.overview-table-panel-content {
+    flex: 1 1 auto;
+    height: 400px;
+}
+
+.card-item {
+    margin: 10px 0px;
+}
+
+.ask-size, .ask-price {
+    color: #bb5536;
+}
+
+.bid-size, .bid-price {
+    color: #59a34e;
+}
