@@ -1,0 +1,73 @@
+<div class="container col-md-12 mb-3 mt-3 register" [@flyIn]="'active'">
+	<div class="col-md-12 text-center">
+		<mat-icon style="font-size: 72px; width:72px; height: 72px;">fingerprint</mat-icon>
+	</div>
+
+	<div class="col-md-12">
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="needs-validation form-register" novalidate="">
+			<h4 class="h3 mb-3 font-weight-normal">Create account</h4>
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label for="firstName">First name</label>
+					<input formControlName="firstName" class="form-control" id="firstName" placeholder="" required="" type="text">
+					<div [style.display]="!registerForm.get('firstName').valid && registerForm.get('firstName').touched ? 'block' : 'none'" class="invalid-feedback">
+						Valid first name is required.
+					</div>
+				</div>
+				<div class="col-md-6 mb-3">
+					<label for="lastName">Last name</label>
+					<input formControlName="lastName" class="form-control" id="lastName" placeholder="" required="" type="text">
+					<div [style.display]="!registerForm.get('lastName').valid && registerForm.get('lastName').touched ? 'block' : 'none'" class="invalid-feedback">
+						Valid last name is required.
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="username">Username</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">@</span>
+					</div>
+					<input formControlName="username" class="form-control" id="username" placeholder="Username" required="" type="text">
+					<div [style.display]="!registerForm.get('username').valid && registerForm.get('username').touched ? 'block' : 'none'" class="invalid-feedback" style="width: 100%;">
+						Your username is required.
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="email">Email</label>
+				<input formControlName="email" class="form-control" id="email" placeholder="you@example.com" type="email">
+				<div [style.display]="!registerForm.get('email').valid && registerForm.get('email').touched ? 'block' : 'none'" class="invalid-feedback">
+					Please enter a valid email address.
+				</div>
+			</div>
+
+			<div formGroupName="passwordGroup">
+				<div class="mb-3">
+					<label for="password">Password</label>
+					<input formControlName="password" class="form-control" id="password" type="password">
+					<div [style.display]="!registerForm.get('passwordGroup').get('password').valid && registerForm.get('passwordGroup').get('password').touched ? 'block' : 'none'" class="invalid-feedback">
+						Please enter a valid password at least 8-character long containing one upper-case letter, one lower-case letter and one digit.
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label for="password">Confirm Password</label>
+					<input formControlName="confirmPassword" class="form-control" id="confirm-password" type="password">
+					<div [style.display]="!registerForm.get('passwordGroup').valid && registerForm.get('passwordGroup').get('confirmPassword').touched ? 'block' : 'none'" class="invalid-feedback">
+						Password does not match.
+					</div>
+				</div>
+			</div>
+
+			<hr class="mb-4">
+			<button class="btn btn-secondary btn-lg btn-block" type="submit">Confirm</button>
+		</form>
+		<div class="text-center">
+			<p>Already have an account?<a [routerLink]="['/account/signin']"> Sign in </a></p>
+		</div>
+	</div>
+</div>
+

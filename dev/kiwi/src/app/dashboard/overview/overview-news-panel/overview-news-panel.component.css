@@ -1,0 +1,39 @@
+.overview-news-panel .rowleft {
+    -webkit-animation: 175s rowleft linear infinite normal;
+    animation: 175s rowleft linear infinite normal;
+    position: relative;
+}
+
+.overview-news-panel {
+    width: 100%;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: row;
+    white-space: nowrap;
+    background-color: #343a40;
+    color: white;
+}
+
+.news-panel-icon-container {
+    font-size: 1rem;
+    height: 34px;
+    background-color: #343a40;
+    z-index: 100;
+}
+
+.overview-news-panel-container, .news-panel-icon-container {
+    padding: 5px;
+}
+
+.overview-news-panel a {
+    color: white;
+}
+
+.overview-news-panel-content {
+    display: inline-block
+}
+
+.news-item {
+    display: inline-block;
+    padding: 0px 50px;
+}

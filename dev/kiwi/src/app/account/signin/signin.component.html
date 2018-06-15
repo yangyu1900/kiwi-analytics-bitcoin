@@ -1,0 +1,29 @@
+<div class="text-center container mt-3 mb-3" [@flyIn]="'active'">
+	<form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="form-signin">
+		<mat-icon style="font-size: 72px; width:72px; height: 72px;">fingerprint</mat-icon>
+		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		<label for="inputUsername" class="sr-only">Username</label>
+		<input formControlName="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus=""
+			type="text">
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input formControlName="password" id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+		<div [style.display]="!signinForm.get('username').valid && signinForm.get('username').touched ? 'block' : 'none'" class="invalid-feedback"
+			style="width: 100%;">
+			Your username is required.
+		</div>
+		<div [style.display]="!signinForm.get('password').valid && signinForm.get('password').touched ? 'block' : 'none'" class="invalid-feedback"
+			style="width: 100%;">
+			Your password is required.
+		</div>
+		<div [style.display]="success ? 'none' : 'block'" class="invalid-feedback">
+			Your account or password is incorrect.
+		</div>
+		<div class="checkbox mb-3">
+			<label>
+				<input value="remember-me" type="checkbox"> Remember me
+			</label>
+		</div>
+		<button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
+		<a [routerLink]="['/account/register']">Register</a>
+	</form>
+</div>
